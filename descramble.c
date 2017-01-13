@@ -1,9 +1,10 @@
 #include <stdio.h>
+#include <string.h>
 
-#define MAX_X 4			// size of the grid
+#define MAX_X 4			    // size of the grid
 #define MAX_Y 4
-#define MIN_WORD 3		// smallest word
-#define MAX_WORD 8		// largest
+#define MIN_WORD 3		    // smallest word
+#define MAX_WORD 8		    // largest
 #define MAX_WORDN MAX_WORD + 1	// largest + null terminator
 #define MAX_WL 1024 * 8		// wordlist size (each word length has its own)
 #define MAX_MATCHES 210		// 203 was the most i've seen
@@ -112,16 +113,16 @@ void recurseScramble(int depth, int x, int y, char gridString[], char grid[][MAX
 
 				for (i = 0; i < MAX_WL; i++) {
 
-			// are we at the end of the word list?
-			if (words[d][i][0] == '\0') { break; }
+                    // are we at the end of the word list?
+                    if (words[d][i][0] == '\0') { break; }
 
-			// just compare a few initial chars
-			// as we only want a hint of a true match
-			if (gridString[0] != words[d][i][0]) { continue; }
-			if (gridString[1] != words[d][i][1]) { continue; }
-			if (gridString[2] != words[d][i][2]) { continue; }
+                    // just compare a few initial chars
+                    // as we only want a hint of a true match
+                    if (gridString[0] != words[d][i][0]) { continue; }
+                    if (gridString[1] != words[d][i][1]) { continue; }
+                    if (gridString[2] != words[d][i][2]) { continue; }
 
-			foundHint = 1;
+                    foundHint = 1;
 
 				}
 
